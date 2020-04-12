@@ -30,16 +30,16 @@ function writePassword() {
   var num = confirm('Do you want to include numbers?');
   var specialchar = confirm('Do you want to to include speacial characters?');
   //  If statements
-  if (!specialchar && !lower && !num && !Capital) {
+  if (!specialchar && !lower && !num && !Capital) { //validation for all imputs
     choice= alert('You must choose  atleast one character')
     return;
   }
-  if (Capital) Choice = Choice.concat(caps);
-  if (lower) Choice = Choice.concat(lowers);
-  if (num) Choice = Choice.concat(nums);
-  if (specialchar) Choice = Choice.concat(specialchars);
+  if (Capital) Choice = Choice.concat(caps); //the combination of the users choice and capital letters
+  if (lower) Choice = Choice.concat(lowers);//the combination of the users choice and lower letters
+  if (num) Choice = Choice.concat(nums);//the combination of the users choice and numbers
+  if (specialchar) Choice = Choice.concat(specialchars);//the combination of the users choice and special characters
   
-  while (passwordUser.length <= validation) {
+  while (passwordUser.length <= validation) { 
     var concat = Math.floor(Math.random() * Choice.length);
     var arrayofusers = Choice[concat];
     passwordUser += arrayofusers;
